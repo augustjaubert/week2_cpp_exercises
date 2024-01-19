@@ -4,14 +4,14 @@
 
 bool check_add_elements()
 {
-    std::vector<int> starting_vector;
+    std::vector<int> starting_vector = {6};
     addElements(starting_vector, 5, 4);
     if( starting_vector.size() != 4)
     {
         std::cout << "Vector is " << starting_vector.size() << " elements instead of 4." << std::endl;
         return false;
     }
-    for(auto &&i : starting_vector)
+    for(auto &i : starting_vector)
     {
         if(i != 5)
         {
@@ -26,7 +26,8 @@ bool check_add_elements()
 
 int main()
 {
-    std::vector<int> some_multiples = {1, 5, 3, 10, 0, 2};
+    /*
+        std::vector<int> some_multiples = {1, 5, 3, 10, 0, 2};
     int count = countMultiplesOfFive(some_multiples);
     std::cout << (count == 3 ? "Check 1 passed" : "Failed first check, should find 2 multiples and found " + std::to_string(count)) << std::endl;
     
@@ -38,5 +39,9 @@ int main()
     count = countMultiplesOfFive(empty_vector);
     std::cout << (count == 0 ? "Check 3 passed" : "Failed third check, should find 0 multiples and found " + std::to_string(count)) << std::endl;
     
+    */
+
+   std::cout << check_add_elements() << std::endl;
+
     return 0;
 }

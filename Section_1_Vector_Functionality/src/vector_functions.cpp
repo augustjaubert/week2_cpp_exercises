@@ -12,6 +12,7 @@ void addElements(std::vector<int> v, int x, int n)
 {
     for (int i = 0; i < n; i++)
     {
+        std::cout << i << std::endl;
         v.push_back(x);
     }
 }
