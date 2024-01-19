@@ -4,19 +4,8 @@
 
 // write your print vector function here
 int countMultiplesOfFive(std::vector<int> inputVector)
-{
-    int temp = 0;
-    int counter = 0;
-
-    for (int i = 0; i < inputVector.size(); i++)
-    {
-        temp = inputVector[i];
-        if (temp % 5 == 0)
-        {
-            counter++;
-        }
-    }
-    return counter;
+{    
+    return std::count_if(inputVector.begin(), inputVector.end(), [](int x){return x%5 == 0;});
 }
 
 void addElements(std::vector<int> v, int x, int n)
