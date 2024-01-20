@@ -4,9 +4,9 @@
 
 bool check_add_elements()
 {
-    std::vector<int> starting_vector = {6};
+    std::vector<int> starting_vector = {};
     addElements(starting_vector, 5, 4);
-    if( starting_vector.size() != 4)
+    if(starting_vector.size() != 4)
     {
         std::cout << "Vector is " << starting_vector.size() << " elements instead of 4." << std::endl;
         return false;
