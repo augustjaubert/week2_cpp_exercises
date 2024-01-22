@@ -23,11 +23,14 @@ double Fraction::toDouble() const
 
 std::string Fraction::toString() const
 {
-    return std::to_string(numerator) + "/" + std::to_string(denominator);
+    if (numerator == 0)
+        return "0";
+    else
+        return std::to_string(numerator) + "/" + std::to_string(denominator);
 }
 
-Fraction Fraction::Simplify() {
-    int gcd = std::gcd(numerator,denominator);
-    numerator /= gcd;
-    denominator /= gcd;
+void Fraction::Simplify() {
+    int commonDivisor = std::gcd(numerator,denominator);
+    numerator /= commonDivisor;
+    denominator /= commonDivisor;
 }
