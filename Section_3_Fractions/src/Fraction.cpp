@@ -1,23 +1,33 @@
 #include "Fraction.h"
+#include <numeric>
 
-Fraction::Fraction(int a, int b){}
-
-int Fraction::reciprocal(int a, int b)
+Fraction::Fraction(int a, int b) : numerator(a), denominator(b)
 {
-    return b/a;
+    Simplify();
 }
 
-int Fraction::multiply(int c){
-    return (a/b) * c;
+Fraction Fraction::reciprocal() const
+{
+    return Fraction(denominator, numerator);
 }
 
-double Fraction::toDouble()
+Fraction Fraction::multiply(int a) const
 {
-    return (double)a/(double)b;
+    return Fraction(numerator * a, denominator);
 }
 
-std::string Fraction::toString()
+double Fraction::toDouble() const
 {
-    std::string output = std::to_string(a) + "/" + std::to_string(b);
-    return output;
+    return (double)numerator / (double)denominator;
+}
+
+std::string Fraction::toString() const
+{
+    return std::to_string(numerator) + "/" + std::to_string(denominator);
+}
+
+Fraction Fraction::Simplify() {
+    int gcd = std::gcd(numerator,denominator);
+    numerator /= gcd;
+    denominator /= gcd;
 }

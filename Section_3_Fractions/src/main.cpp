@@ -1,7 +1,8 @@
 #include <iostream>
 #include "Fraction.h"
-Fraction fraction;
+
 int main(){
-    std::cout << fraction.reciprocal(20,2);
+    Fraction frac(8,4);
+    std::cout << frac.toString() << std::endl;
     return 0;
 }
